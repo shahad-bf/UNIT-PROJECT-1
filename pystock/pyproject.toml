@@ -1,0 +1,13 @@
+[project]
+name = "pystock"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "colorama>=0.4.6",
+    "forex-python>=1.9.2",
+    "matplotlib>=3.10.3",
+    "pandas>=2.3.0",
+    "yfinance>=0.2.64",
+]

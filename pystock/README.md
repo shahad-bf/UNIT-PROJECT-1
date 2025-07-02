@@ -1,13 +1,18 @@
-# UNIT-PROJECT-1
-
 
 
 ## Based on what you’ve learned until now , create a project of your choosing (impress us with your imagination) . This project must at least satisfy the following minimum requirements :
+file name is: pystock
 
-- Must be interactive on CLI.
-- Use your coding skills in Python accurately.
-- Organize Your Code into modules & (or packages)
-- Use git & Github to track changes in your code.
+PyStock is a Python-based command-line application that allows users to fetch, analyze, and visualize stock market data for public companies using Yahoo Finance. It supports historical data retrieval, graphical visualization, and CSV export, all through simple CLI commands.
+Language: Python
+
+Interface: Command Line Interface (CLI)
+
+Code Structure: Python modules & packages
+
+Libraries: pandas, matplotlibو json, y.financem, argparse
+
+Supporting Files: requirements.txt, README.md
 
 ## Example Project :  An online Grocery Store :
 
@@ -15,11 +20,26 @@
 
 ### 1. Choose from stock list
 You can pick one of these company:
-- AAPL → Apple
-- TSLA → Tesla
-- GOOG → Google
-- MSFT → Microsoft
-- AMZN → Amazon
+ "AAPL": "Apple Inc",
+    "TSLA": "Tesla Motors",
+    "GOOG": "Google LLC",
+    "MSFT": "Microsoft Corp",
+    "AMZN": "Amazon Inc", 
+    "META": "Meta Platforms Inc.", 
+    "NVDA": "NVIDIA Corporation", 
+    "NFLX": "Netflix Inc.", 
+    "BABA": "Alibaba Group", 
+    "INTC": "Intel Corporation", 
+    "ORCL": "Oracle Corporation", 
+    "ADBE": "Adobe Inc.", 
+    "PYPL": "PayPal Holdings Inc.", 
+    "IBM": "International Business Machines", 
+    "CSCO": "Cisco Systems Inc.", 
+    "PEP": "PepsiCo Inc.", 
+    "KO": "Coca-Cola Company", 
+    "WMT": "Walmart Inc.", 
+    "DIS": "The Walt Disney Company", 
+    "UBER": "Uber Technologies Inc " 
 
 ### 2. Log in / Register
 - New users can register with a username and password.
@@ -31,7 +51,7 @@ You can pick one of these company:
   - Highest price
   - Lowest price
 - If you don’t write dates, it shows prices for the last 5 days.
-- The vertical label on the graph says "RS" instead of "Price".
+- The vertical label on the graph says "USD" instead of "Price".
 
 ### 4. Save Prices
 - You can save the prices in a CSV file.
@@ -40,9 +60,18 @@ You can pick one of these company:
 ### 5. Draw Graph
 - You can choose to show a simple graph of the prices with labels for date (labelx) and RS(labely).
 
-### 6. Logs
+### 6. save data
 - Everything you do (login, search, save, graph) is saved in `report_user.json`.
 - You can see your history from the menu.
+
+
+Argument	Description
+symbol--> (Required) Stock symbol (e.g., AAPL, TSLA, GOOG)
+--date_from	--> Start date (format: YYYY-MM-DD)
+--date_to--> End date (format: YYYY-MM-DD)
+--range	 like 5d, 1mo, 6mo, 1y
+--graphed	Show graph of stock prices
+-- save Data
 
 
 
@@ -61,27 +90,25 @@ You can pick one of these company:
 ## How to Install
 Install required tools:
 ```bash
-pip install yfinance matplotlib
-```
+pip install yfinance matplotlib pandas
 
----
 
-## How to Start
-Run the app:
-```bash
-python main.py
-```
+##  Start
+Run the app: 
+bash
+python login.py
+
 
 Then follow the instructions:
-```
+
 Main Menu:
 1. Login
 2. Register
 3. Exit
-```
+
 
 After login:
-```
+
 Stock Menu:
 1. Choose from stock list
 2. View Activity Log
@@ -98,8 +125,37 @@ Activity Log for shahad:
 - Saved data to AAPL_2025-05-01_to_2025-06-01.csv
 - Viewed graph for AAPL
 ```
+Username: shahad
+Password: shad1234
+Welcome, shahad
 
----
+Stock Menu:
+1. Logout
+2. View Activity Log
+3. Choose from stock list
+>> 3
+
+Choose a company:
+...
+>> 2
+Selected: TSLA (Tesla Motors)
+Use custom dates? (yes/no): yes
+From date (YYYY-MM-DD): 2025-2-25
+To date (YYYY-MM-DD): 2025-6-8
+Getting data for TSLA...
+
+Last price: 295.14
+High: 367.71, Low: 214.25
+
+Save this data?
+1. Yes by default name
+>> 1
+Saved to TSLA_2025-2-25_to_2025-6-8.csv
+
+Show graph? (yes/no): yes
+
+
+
 
 ## Notes
 - All actions are saved per user.
@@ -119,9 +175,12 @@ This project uses:
     ```python
     yf.download("AAPL", start="2025-05-01", end="2025-06-01")
     ```
-- All data is fetched live from the internet — no fake data.
+
 
 ### For your project. Edit this README.md file to include your own project name,  overview, user stories, and usage. 
 
 ### NOTE: before submitting the final project, please do the following command:
 `pip freeze > requirements.txt` to enable use to know & use the packages used in your project.
+yfinance
+matplotlib
+pandas

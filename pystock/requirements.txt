@@ -1,0 +1,4 @@
+yfinance
+forex-python
+matplotlib
+pandas
